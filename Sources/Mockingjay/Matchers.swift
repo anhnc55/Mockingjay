@@ -21,6 +21,14 @@ public func uri(_ uri:String) -> (_ request: URLRequest) -> Bool {
   return { (request:URLRequest) in
     let template = URITemplate(template:uri)
     
+    if let components = NSURLComponents(string: uri) {
+      if components.host == request.url?.host &&
+        components.path == request.url?.path {
+        let requestComponents = request.url.flatMap({ NSURLComponents.init(url: $0, resolvingAgainstBaseURL: false)})
+        return requestComponents?.queryItems.flatMap(Set.init) == components.queryItems.flatMap(Set.init)
+      }
+    }
+    
     if let URLString = request.url?.absoluteString {
       if template.extract(URLString) != nil {
         return true

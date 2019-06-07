@@ -7,8 +7,8 @@ Pod::Spec.new do |spec|
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
   spec.social_media_url = 'http://twitter.com/kylefuller'
   spec.source = { :git => 'https://github.com/anhnc55/Mockingjay.git', :tag => "#{spec.version}" }
-  spec.ios.deployment_target = '10.0'
-  spec.osx.deployment_target = '10.14'
+  spec.ios.deployment_target = '8.0'
+  spec.osx.deployment_target = '10.10'
   spec.requires_arc = true
 
   spec.subspec 'Core' do |core_spec|
