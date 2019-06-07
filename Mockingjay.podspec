@@ -6,17 +6,17 @@ Pod::Spec.new do |spec|
   spec.license = { :type => 'BSD', :file => 'LICENSE' }
   spec.author = { 'Kyle Fuller' => 'kyle@fuller.li' }
   spec.social_media_url = 'http://twitter.com/kylefuller'
-  spec.source = { :git => 'https://github.com/kylef/Mockingjay.git', :tag => "#{spec.version}" }
-  spec.ios.deployment_target = '8.0'
-  spec.osx.deployment_target = '10.10'
+  spec.source = { :git => 'https://github.com/anhnc55/Mockingjay.git', :tag => "#{spec.version}" }
+  spec.ios.deployment_target = '10.0'
+  spec.osx.deployment_target = '10.14'
   spec.requires_arc = true
 
   spec.subspec 'Core' do |core_spec|
-    core_spec.dependency 'URITemplate', '~> 2.0'
     core_spec.source_files = 'Sources/Mockingjay/Mockingjay.{h,swift}',
         'Sources/Mockingjay/MockingjayProtocol.swift',
         'Sources/Mockingjay/{Matchers,Builders}.swift',
         'Sources/Mockingjay/NSURLSessionConfiguration.swift',
+	'Sources/Mockingjay/URITemplate.swift',
         'Sources/Mockingjay/MockingjayURLSessionConfiguration.m'
   end
 
