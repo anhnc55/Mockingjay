@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Cocode. All rights reserved.
 //
 
+import ObjectiveC
 import XCTest
 
 let swizzleTearDown: Void = {
